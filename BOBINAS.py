@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Parámetros
-L = 1.5  # Henrios
+L = 0.05  # Henrios
 
 # Tiempo
 t = np.linspace(-2, 15, 1000)
@@ -13,13 +13,13 @@ def i_func(t):
     return np.piecewise(
         t,
         [t < 0,
-         (t >= 0) & (t < 5),
-         (t >= 5) & (t < 10),
-         t >= 10],
-        [lambda t: -t,
-         lambda t: t**2,
-         lambda t: 5*t,
-         10]
+         (t >= 0) & (t < 2),
+         (t >= 2) & (t < 6),
+         t >= 6],
+        [lambda t: 15,
+         lambda t: 15,
+         lambda t: -10/4*t + 20,
+         5]
     )
 
 # Corriente
